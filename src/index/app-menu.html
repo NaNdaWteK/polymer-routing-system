@@ -1,0 +1,44 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<dom-module id="app-menu">
+  <template>
+    <style>
+      :host {
+        background-color: #c4c4c4;
+        color: red;
+        display: block;
+      }
+      li{
+          display: inline-block;
+          margin-right: 1em;
+          padding: 1em;
+          list-style: none;
+      }
+    </style>
+    <ul>
+        <li><a href="./index">{{param.name}}</a></li>
+        <li><a href="./services">Services</a></li>
+        <li><a href="./blog">Blog</a></li>
+        <li><a href="./contact">Contact</a></li>
+    </ul>
+    <child-component id="child"></child-component>
+  </template>
+  <script>
+    class AppMenu extends Polymer.Element {
+      constructor() {
+        super();
+      }
+      static get is() { return 'app-menu'; }
+      static get properties() {
+        return {
+          param: {
+            type: Object,
+            value: {
+              name: 'Home'
+            }
+          }
+        };
+      }
+    }
+    window.customElements.define(AppMenu.is, AppMenu);
+  </script>
+</dom-module>

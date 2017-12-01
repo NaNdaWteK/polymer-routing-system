@@ -1,0 +1,21 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<dom-module id="index-octopus">
+  <template>
+    <app-menu id="menu"></app-menu>
+  </template>
+  <script>
+    class IndexOctopus extends Polymer.Element {
+      static get is() { return 'index-octopus'; }
+      constructor() {
+        super();
+      }
+      ready() {
+        super.ready();
+        this.menu = this.$.menu;
+        this.child = this.$.menu.$.child
+        this.subchild = this.$.menu.$.child.$.subchild;
+      }
+    }
+    window.customElements.define(IndexOctopus.is, IndexOctopus);
+  </script>
+</dom-module>

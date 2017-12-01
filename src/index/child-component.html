@@ -1,0 +1,29 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<dom-module id="child-component">
+  <template>
+    <button on-click="fireChildEvent">{{param.button}}</button>
+    <subchild-component id="subchild"></subchild-component>
+  </template>
+  <script>
+    class ChildComponent extends Polymer.Element {
+      static get is() { return 'child-component'; }
+      constructor() {
+        super();
+      }
+      static get properties() {
+        return {
+          param: {
+            type: Object,
+            value: {
+              button: 'Child Button'
+            }
+          }
+        };
+      }
+      fireChildEvent() {
+        this.dispatchEvent(new CustomEvent('child', {detail: {child: true}}));
+      }
+    }
+    window.customElements.define(ChildComponent.is, ChildComponent);
+  </script>
+</dom-module>

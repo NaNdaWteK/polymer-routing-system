@@ -1,0 +1,28 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<dom-module id="subchild-component">
+  <template>
+    <button on-click="changeMenuHomeName">{{param.button}}</button>
+  </template>
+  <script>
+    class SubchildComponent extends Polymer.Element {
+      static get is() { return 'subchild-component'; }
+      constructor() {
+        super();
+      }
+      static get properties() {
+        return {
+          param: {
+            type: Object,
+            value: {
+              button: 'Subchild Button'
+            }
+          }
+        };
+      }
+      changeMenuHomeName() {
+        this.dispatchEvent(new CustomEvent('subchild', {detail: {subchild: true}}));
+      }
+    }
+    window.customElements.define(SubchildComponent.is, SubchildComponent);
+  </script>
+</dom-module>
