@@ -39,16 +39,14 @@
     <link rel="import" href="src/index/index-octopus.html">
   </head>
   <body>
-    <index-octopus id="octopus"></index-octopus>
     <noscript>
       Please enable JavaScript to view this website.
     </noscript>
-    <script>
-    window.addEventListener('WebComponentsReady', function(e) {
-      var script = document.createElement("script");
-      script.src = "./js/components/index.js";
-      document.body.append(script);
-    });
-    </script>
+    <script src="./js/infrastructure/bus.js" charset="utf-8"></script>
+    <script src="./js/infrastructure/service.js" charset="utf-8"></script>
+    <script src="./js/services/index.js" charset="utf-8"></script>
+    <script src="./js/components/index/index.js" charset="utf-8"></script>
+    <script src="./js/pages/index.js" charset="utf-8"></script>
+    <script src="./js/index.js" charset="utf-8"></script>
   </body>
 </html>

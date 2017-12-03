@@ -14,6 +14,12 @@
         this.menu = this.$.menu;
         this.child = this.$.menu.$.child
         this.subchild = this.$.menu.$.child.$.subchild;
+        console.log('Readddyyy')
+        this.dispatchEvent(new CustomEvent('initialize', {detail: {initialize: true}}));
+      }
+      connectedCallback() {
+        super.connectedCallback();
+        console.log('Connected callback');
       }
     }
     window.customElements.define(IndexOctopus.is, IndexOctopus);

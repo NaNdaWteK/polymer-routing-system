@@ -1,7 +1,7 @@
 <link rel="import" href="../../bower_components/polymer/polymer-element.html">
 <dom-module id="child-component">
   <template>
-    <button on-click="fireChildEvent">{{param.button}}</button>
+    <button on-click="fireChildEvent">{{button}}</button>
     <subchild-component id="subchild"></subchild-component>
   </template>
   <script>
@@ -12,11 +12,9 @@
       }
       static get properties() {
         return {
-          param: {
-            type: Object,
-            value: {
-              button: 'Child Button'
-            }
+          button: {
+            type: String,
+            value: 'Child Button'
           }
         };
       }
